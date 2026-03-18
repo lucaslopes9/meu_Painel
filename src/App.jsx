@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import LoginMain from './components/adm_login/Login';
 import PainelMain from './components/Painel/Main'; 
-import { auth, db } from './firebase'; 
-import { onAuthStateChanged } from 'firebase/auth';
-import { ref, onValue } from 'firebase/database';
+import { auth, db, onAuthStateChanged, ref, onValue } from './firebase';
 
 function App() {
   const MODO_DESENVOLVEDOR = false; 
@@ -15,6 +13,7 @@ function App() {
   const [loading, setLoading] = useState(true); // Inicializa sempre como true para validar
 
   useEffect(() => {
+    
     if (MODO_DESENVOLVEDOR) {
       setLoading(false);
       return;
