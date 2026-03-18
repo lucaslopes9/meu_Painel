@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Sidebar from './Sidebar';
 import TopHeader from './TopHeader';
-import MiddelPart from './middelPart';
+import MiddelPart from './MiddelPart';
 import './PainelStyles.css'; 
 
 const Main = ({ user, userRole, userName }) => { 
