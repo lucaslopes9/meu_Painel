@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import LoginMain from './components/adm_login/login';
+import LoginMain from './components/adm_login/Login';
 import PainelMain from './components/Painel/Main'; 
 import { auth, db } from './firebase'; 
 import { onAuthStateChanged } from 'firebase/auth';

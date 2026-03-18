@@ -1,22 +1,21 @@
 import { initializeApp } from "firebase/app";
-import { getDatabase } from "firebase/database";
-import { getAuth } from "firebase/auth"; // <--- Faltava esta linha
+import { getDatabase, ref, onValue } from "firebase/database"; 
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCsu1aQ2S09TRbubwa-TkRqiaovEK39eno",
-  authDomain: "uaigonovo.firebaseapp.com",
-  databaseURL: "https://uaigonovo-default-rtdb.firebaseio.com",
-  projectId: "uaigonovo",
-  storageBucket: "uaigonovo.firebasestorage.app",
-  messagingSenderId: "734882211401",
-  appId: "1:734882211401:web:725d4d720f6f5e72f68198"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 // Inicializa o Firebase
 const app = initializeApp(firebaseConfig);
 
-// Inicializa e exporta o Banco de Dados
+// Exporta as instâncias e as funções necessárias
 export const db = getDatabase(app);
-
-// Inicializa e exporta a Autenticação
-export const auth = getAuth(app); // <--- Faltava exportar o auth aqui
+export const auth = getAuth(app);
+export { onAuthStateChanged, ref, onValue };
