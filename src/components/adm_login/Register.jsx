@@ -8,6 +8,7 @@ const Cadastro = ({ aoVoltar }) => {
   const [senha, setSenha] = useState('');
   const [erro, setErro] = useState('');
 
+
   const handleCadastro = async (e) => {
     e.preventDefault();
     setErro('');

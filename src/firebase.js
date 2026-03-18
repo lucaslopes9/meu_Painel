@@ -17,5 +17,6 @@ const app = initializeApp(firebaseConfig);
 
 // Exporta as instâncias e as funções necessárias
 export const db = getDatabase(app);
+
 export const auth = getAuth(app);
 export { onAuthStateChanged, ref, onValue };
